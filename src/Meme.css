@@ -11,6 +11,33 @@
     left:50%;
     transform: translate(-50%,-50%);
     width: 400px;
-    height: 400px;
+    height: 600px;
     background-color: white;
+    border:2px solid grey;
+    box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.274);
+    background-color: rgb(255, 255, 255);
+}
+.xIcon {
+   
+    margin-top:10px;
+    position: absolute;
+    left:95%;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.tinyBox{
+    position: relative;
+    top:6%;
+    left: 13%;
+    background-color: blueviolet;
+    width:300px;
+    height: 300px;
+
+}
+.tinyBox img{
+    width: 100%;
+    height: 100%;
+
 }

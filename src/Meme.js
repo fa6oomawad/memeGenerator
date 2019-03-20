@@ -19,6 +19,19 @@ render(){
  <div className="tinyBox">
 <img src={this.props.imgsrc} alt="meme"/>
  </div>
+
+ <div className="upper">
+     <span>Upper Text</span>
+     <input type='text' placeholder='Enter your Text' id="upperText"></input>
+ </div>
+
+ <div className="lower">
+     <span>Lower Text</span>
+     <input type='text' placeholder='Enter your Text' id="lowerText"></input>
+ </div>
+ <div className="download">
+ <button>Download</button>
+ </div>
  </div> 
  <Route path="/" Component={App} />       
 </div>

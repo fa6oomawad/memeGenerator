@@ -21,9 +21,18 @@
    
     margin-top:10px;
     position: absolute;
-    left:95%;
+    left:93%;
     font-weight: bold;
     cursor: pointer;
+    display:inline-block;
+    width:15px;
+    height: 15px;
+    transition: .7s all ease;
+}
+.xIcon:hover{
+    color: rgb(190, 201, 39);
+    font-size:18px;
+
 
 }
 

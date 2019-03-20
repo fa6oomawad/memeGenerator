@@ -41,3 +41,57 @@
     height: 100%;
 
 }
+
+.upper{
+    position :absolute;
+    top:60%;
+    left:12%;
+
+
+}
+.lower{
+    position :absolute;
+    top:75%;
+    left:12%;
+}
+.upper span ,.lower span {
+font-family: 'Georgia';
+font-weight: bold;
+letter-spacing: 0.5px;
+color: rgb(61, 24, 24);
+display:block;
+
+}
+#upperText,#lowerText {
+    -webkit-appearance: none;
+    border:2px solid rgb(253, 253, 253);
+        box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.274);
+    height: 30px;
+    width:300px;
+    font-family: monospace;
+    font-weight: bold;
+    font-size:15px;
+margin:10px;
+}
+
+.download button {
+    -webkit-appearance: none;
+    position :absolute;
+    top:90%;
+    left:26%;
+    width:200px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.479);
+    color:white;
+    border:2px solid rgb(253, 253, 253);
+    box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.274);
+    font-size:16px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+
+    
+}
+
+.download button:hover{
+    background-color: rgb(190, 201, 39);
+}

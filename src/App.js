@@ -12,16 +12,16 @@ class App extends Component {
 constructor(props){
 super(props);
 this.state={
-  imgsrc:'',
+  img:'',
 }
 this.handleImgClick=this.handleImgClick.bind(this);
 
 }
 //to handle the click on meme so we can reach it src to handle it to the other component
 handleImgClick(e){
-console.log(e.target.src);
+console.log(e.target);
 this.setState({
-  imgsrc:e.target.src,
+  img:e.target,
 })
 }
 
@@ -39,7 +39,7 @@ this.setState({
        </div>
 
 
-      <Route path='/CreateMeme' render={(props)=><Meme {...props} imgsrc={this.state.imgsrc}/>} />
+      <Route path='/CreateMeme' render={(props)=><Meme {...props} img={this.state.img}/>} />
       </div>
       </HashRouter>
     );

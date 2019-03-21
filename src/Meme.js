@@ -7,7 +7,23 @@ import{
     Link
 } from 'react-router-dom';
 class Meme extends Component {
- 
+    constructor(props){
+        super(props);
+        this.displayImgOnCanvas=this.displayImgOnCanvas.bind(this)
+    }
+ componentDidMount(){
+    this.displayImgOnCanvas();
+    console.log('ola')
+
+ }
+
+ displayImgOnCanvas(){
+var canvas=document.querySelector('.tinyBox2');
+var ctx=canvas.getContext('2d');
+var img = this.props.img;
+
+ctx.drawImage(img, 0, 0, img.width,    img.height,     // source rectangle
+    0, 0, canvas.width, canvas.height); }
 render(){
     return (
         <HashRouter>
@@ -17,7 +33,10 @@ render(){
  <div className="box">
  <Link to="/"><div className="xIcon">X</div></Link>
  <div className="tinyBox">
-<img src={this.props.imgsrc} alt="meme"/>
+ <canvas className='tinyBox2'>
+
+ </canvas>
+
  </div>
 
  <div className="upper">

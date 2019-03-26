@@ -27,8 +27,10 @@ class Meme extends Component {
     var ctx=canvas.getContext('2d');
     var img = this.props.img;
 
-ctx.drawImage(img, 0, 0, img.width,    img.height,     // source rectangle
-    0, 0, canvas.width, canvas.height); 
+ctx.drawImage(img, 0, 0, img.width,    img.height,    
+    0, 0, canvas.width, canvas.height);
+    ctx.fillStyle="rgba(255, 255, 255, 0)";
+    ctx.fillRect(0,0,canvas.width,canvas.height) ;
     
 }
 
@@ -36,8 +38,16 @@ ctx.drawImage(img, 0, 0, img.width,    img.height,     // source rectangle
 writeTextOnTop(e){
     var canvas=document.querySelector('.tinyBox2');
     var ctx=canvas.getContext('2d');
-   ctx.fillStyle="blue";
-    ctx.font="30px Arial";
+    var img = this.props.img;
+
+    if(e.key==='Backspace'){
+        console.log('hi backspace');
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.drawImage(img, 0, 0, img.width,    img.height,    
+    0, 0, canvas.width, canvas.height);
+    }
+   ctx.fillStyle="white";
+    ctx.font="30px Impact";
     ctx.fillText(e.target.value,10,50);
     console.log(e)
 

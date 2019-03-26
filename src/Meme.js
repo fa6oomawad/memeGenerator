@@ -21,45 +21,26 @@ class Meme extends Component {
 
  }
 //function to take the chosen image and put it on canvas
+
  displayImgOnCanvas(){
-var canvas=document.querySelector('.tinyBox2');
-var ctx=canvas.getContext('2d');
-var img = this.props.img;
+    var canvas=document.querySelector('.tinyBox2');
+    var ctx=canvas.getContext('2d');
+    var img = this.props.img;
 
 ctx.drawImage(img, 0, 0, img.width,    img.height,     // source rectangle
     0, 0, canvas.width, canvas.height); 
-    ctx.fillStyle = 'rgba(255, 255, 255, 0)';
-
     
 }
 
 //function to write on the upper side of the img;
 writeTextOnTop(e){
-    
-    var canvas= document.querySelector('.tinyBox2');
-    var ctx= canvas.getContext('2d');
+    var canvas=document.querySelector('.tinyBox2');
+    var ctx=canvas.getContext('2d');
+   ctx.fillStyle="blue";
+    ctx.font="30px Arial";
+    ctx.fillText(e.target.value,10,50);
+    console.log(e)
 
-       
-    ctx.fillStyle = "white";
-
-    ctx.font='30px Impact';
-
-    console.log(e.key);
-    if(e.key==='Backspace'){
-
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        this.displayImgOnCanvas();
-
-    }
-    else{
-        this.setState({upperText: e.target.value});
-console.log(this.state.upperText)
-    var text=this.state.upperText;
-     ctx.fillText(text,10,50);
-     console.log("this is text" , text);
-
-
-    }
     
 
 

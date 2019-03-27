@@ -48,8 +48,12 @@ ctx.drawImage(img, 0, 0, img.width,    img.height,
     }
    ctx.fillStyle="white";
     ctx.font="30px Impact";
-    ctx.fillText(e.target.value,10,50);
-    console.log(e)
+if(e.target.id==="upperText"){
+    ctx.fillText(e.target.value,10,30);}
+    else {
+        ctx.fillText(e.target.value,10,50);  
+    }
+    console.log(e.target.id)
 
     
 
@@ -80,7 +84,7 @@ render(){
 
  <div className="lower">
      <span>Lower Text</span>
-     <input type='text' placeholder='Enter your Text' id="lowerText"></input>
+     <input type='text' placeholder='Enter your Text' id="lowerText" onKeyUp={this.writeTextOnTop}></input>
  </div>
  <div className="download">
  <button>Download</button>

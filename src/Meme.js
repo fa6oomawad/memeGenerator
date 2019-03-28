@@ -29,8 +29,14 @@ class Meme extends Component {
 
 ctx.drawImage(img, 0, 0, img.width,    img.height,    
     0, 0, canvas.width, canvas.height);
-    ctx.fillStyle="rgba(255, 255, 255, 0)";
-    ctx.fillRect(0,0,canvas.width,canvas.height) ;
+    //ctx.fillStyle="rgba(255, 255, 255, 0)";
+    ctx.fillStyle='blue';
+    ctx.fillRect(0,0,canvas.width,80);
+    ctx.fillStyle='red';
+    ctx.fillRect(0,90,canvas.width,90) ;
+
+
+
     
 }
 
@@ -39,26 +45,41 @@ writeTextOnTop(e){
     var canvas=document.querySelector('.tinyBox2');
     var ctx=canvas.getContext('2d');
     var img = this.props.img;
-
-    if(e.key==='Backspace'){
-        console.log('hi backspace');
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.drawImage(img, 0, 0, img.width,    img.height,    
-    0, 0, canvas.width, canvas.height);
+    //every time change happen in text clear the written so it dosent get over each other and make blurry
+    if(e.target.id==='upperText'){
+    ctx.clearRect(0,0,canvas.width,80);
+    ctx.drawImage(img, 0,0, img.width,    img.height,    
+        0, 0, canvas.width, canvas.height);
+    console.log('clear happen to up');
+  
     }
+    else{
+        ctx.clearRect(0,90,canvas.width,90);  
+        console.log('clear happen to down!!');
+        ctx.drawImage(img, 0,0, img.width,    img.height,    
+            0, 0, canvas.width, canvas.height);
+    }
+    
+    //meme popular font styling
    ctx.fillStyle="white";
-    ctx.font="30px Impact";
-if(e.target.id==="upperText"){
-    ctx.fillText(e.target.value,10,30);}
-    else {
-        ctx.fillText(e.target.value,10,50);  
+    ctx.font="23px Impact";
+    ctx.strokeStyle="black";
+    ctx.textAlign='center';
+    if(e.target.id === 'upperText'){
+    ctx.strokeText(e.target.value,canvas.width/2,30);
+    ctx.fillText(e.target.value,canvas.width/2,30);
     }
-    console.log(e.target.id)
+    else{
+        ctx.strokeText(e.target.value,canvas.width/2,130);
+        ctx.fillText(e.target.value,canvas.width/2,130);
+    }
+
+
+  
 
     
 
 
-//3ndi mushkilt al-566 bybga ma wa9'i7 
 
 }
 

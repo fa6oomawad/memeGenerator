@@ -26,9 +26,8 @@ fetchingMemes(){
   const encodedURI=encodeURI(`http://version1.api.memegenerator.net//Generators_Select_ByPopular?pageIndex=0&pageSize=12&apiKey=7ca1ef06-a4d3-46ca-8d9c-78533b6b5e78`)
   return fetch(encodedURI)
   .then((data)=>data.json())
-  .then((repos)=>{
-    this.setState({data:repos.result})
-  }
+  .then((repos)=>this.setState({data:repos.result})
+  
 )
 .catch((error)=>{
   console.warn(error)
@@ -60,8 +59,9 @@ this.setState({
       
        {this.state.data.map((meme)=>{
          return ( 
-         <Link to='/CreateMeme'>
-         <div className="smallBox" onClick={this.handleImgClick}><img src={meme.imageUrl} alt='meme'/>
+         <Link to='/CreateMeme' key={meme.imageID}>
+         <div className="smallBox" onClick={this.handleImgClick} onMouseOver={this.handleMouseOver}>
+         <img src={meme.imageUrl} alt='meme'/>
          </div>
          </Link> 
          )

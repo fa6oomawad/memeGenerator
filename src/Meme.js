@@ -4,8 +4,9 @@ import './Meme.css';
 import{
     HashRouter,
     Route,
-    Link
+    Link 
 } from 'react-router-dom';
+
 
 class Meme extends Component {
     constructor(props){
@@ -15,6 +16,7 @@ class Meme extends Component {
         }
         this.displayImgOnCanvas=this.displayImgOnCanvas.bind(this);
         this.writeTextOnTop=this.writeTextOnTop.bind(this);
+        this.handleCloseClick=this.handleCloseClick.bind(this);
     }
  componentDidMount(){
     this.displayImgOnCanvas();
@@ -83,11 +85,20 @@ writeTextOnTop(e){
 
 }
 
+handleCloseClick(e){
+    console.log(e.target.className)
+    if (e.target.className==='page'){
+return this.props.history.push('/');
+
+}
+
+}
+
 render(){
     return (
         <HashRouter>
 
-<div className="page">
+<div className="page" onClick={this.handleCloseClick}>
 
  <div className="box">
  <Link to="/"><div className="xIcon">X</div></Link>

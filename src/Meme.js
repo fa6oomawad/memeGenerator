@@ -17,6 +17,7 @@ class Meme extends Component {
         this.displayImgOnCanvas=this.displayImgOnCanvas.bind(this);
         this.writeTextOnTop=this.writeTextOnTop.bind(this);
         this.handleCloseClick=this.handleCloseClick.bind(this);
+        this.downloadImge=this.downloadImge.bind(this);
     }
  componentDidMount(){
     this.displayImgOnCanvas();
@@ -47,6 +48,8 @@ writeTextOnTop(e){
     var canvas=document.querySelector('.tinyBox2');
     var ctx=canvas.getContext('2d');
     var img = this.props.img;
+    
+    
     //every time change happen in text clear the written so it dosent get over each other and make blurry
     if(e.target.id==='upperText'){
     ctx.clearRect(0,0,canvas.width,80);
@@ -90,9 +93,19 @@ handleCloseClick(e){
     if (e.target.className==='page'){
 return this.props.history.push('/');
 
+}}
+
+downloadImge(){
+    
+const canvas=document.querySelector('.tinyBox2');
+const data=canvas.toDataURL('image/jpeg');
+const link=document.querySelector('#down');
+link.href=data;
+link.setAttribute('download','meme');
+link.innerHTML=`<img  src='${data}' alt='meme'/>`;
 }
 
-}
+
 
 render(){
     return (
@@ -119,7 +132,7 @@ render(){
      <input type='text' placeholder='Enter your Text' id="lowerText" onKeyUp={this.writeTextOnTop}></input>
  </div>
  <div className="download">
- <button>Download</button>
+ <a id='down' onClick={this.downloadImge}><button>Download</button></a>
  </div>
  </div> 
  <Route path="/" Component={App} />       

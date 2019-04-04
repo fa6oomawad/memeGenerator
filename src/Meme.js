@@ -56,7 +56,6 @@ writeTextOnTop(e){
     ctx.drawImage(img, 0,0, img.width,    img.height,    
         0, 0, canvas.width, canvas.height);
     console.log('clear happen to up');
-  
     }
     else{
         ctx.clearRect(0,90,canvas.width,90);  
@@ -64,20 +63,21 @@ writeTextOnTop(e){
         ctx.drawImage(img, 0,0, img.width,    img.height,    
             0, 0, canvas.width, canvas.height);
     }
-    
+    var upp= document.querySelector('#upperText').value;
+    var dowwn= document.querySelector('#lowerText').value;
     //meme popular font styling
    ctx.fillStyle="white";
     ctx.font="23px Impact";
     ctx.strokeStyle="black";
     ctx.textAlign='center';
-    if(e.target.id === 'upperText'){
-    ctx.strokeText(e.target.value,canvas.width/2,30);
-    ctx.fillText(e.target.value,canvas.width/2,30);
-    }
-    else{
-        ctx.strokeText(e.target.value,canvas.width/2,130);
-        ctx.fillText(e.target.value,canvas.width/2,130);
-    }
+    //write top text
+    ctx.strokeText(upp,canvas.width/2,30);
+    ctx.fillText(upp,canvas.width/2,30);
+    
+    //write lower text
+        ctx.strokeText(dowwn,canvas.width/2,130);
+        ctx.fillText(dowwn,canvas.width/2,130);
+    
 
 
   
@@ -89,7 +89,6 @@ writeTextOnTop(e){
 }
 
 handleCloseClick(e){
-    console.log(e.target.className)
     if (e.target.className==='page'){
 return this.props.history.push('/');
 

@@ -55,3 +55,9 @@ box-shadow: 2px 2px 3px black;
   cursor: pointer;
 }
 
+.innerdiv{
+  width:100px;
+  height: 100px;
+  background-color: rgba(137, 43, 226, 0.274);
+}
+

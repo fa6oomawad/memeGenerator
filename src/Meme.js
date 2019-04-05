@@ -19,12 +19,13 @@ class Meme extends Component {
         this.handleCloseClick=this.handleCloseClick.bind(this);
         this.downloadImge=this.downloadImge.bind(this);
     }
+    
  componentDidMount(){
     this.displayImgOnCanvas();
 
  }
-//function to take the chosen image and put it on canvas
 
+//function to take the chosen image and put it on canvas
  displayImgOnCanvas(){
     var canvas=document.querySelector('.tinyBox2');
     var ctx=canvas.getContext('2d');
@@ -52,16 +53,17 @@ writeTextOnTop(e){
     //every time change happen in text clear the written so it dosent get over each other and make blurry
     if(e.target.id==='upperText'){
     ctx.clearRect(0,0,canvas.width,80);
-    ctx.drawImage(img, 0,0, img.width,    img.height,    
-        0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0,  canvas.width, canvas.height);
     console.log('clear happen to up');
     }
-    else{
+
+    else {
         ctx.clearRect(0,90,canvas.width,90);  
         console.log('clear happen to down!!');
-        ctx.drawImage(img, 0,0, img.width,    img.height,    
-            0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0,  canvas.width, canvas.height);
+
     }
+
     var upp= document.querySelector('#upperText').value;
     var dowwn= document.querySelector('#lowerText').value;
     //meme popular font styling
@@ -72,19 +74,9 @@ writeTextOnTop(e){
     //write top text
     ctx.strokeText(upp,canvas.width/2,30);
     ctx.fillText(upp,canvas.width/2,30);
-    
     //write lower text
-        ctx.strokeText(dowwn,canvas.width/2,130);
-        ctx.fillText(dowwn,canvas.width/2,130);
-    
-
-
-  
-
-    
-
-
-
+    ctx.strokeText(dowwn,canvas.width/2,130);
+    ctx.fillText(dowwn,canvas.width/2,130);
 }
 
 handleCloseClick(e){
@@ -94,7 +86,6 @@ return this.props.history.push('/');
 }}
 
 downloadImge(){
-    
 const canvas=document.querySelector('.tinyBox2');
 const data=canvas.toDataURL('image/jpeg');
 const link=document.querySelector('#down');

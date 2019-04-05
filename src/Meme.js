@@ -29,9 +29,8 @@ class Meme extends Component {
     var canvas=document.querySelector('.tinyBox2');
     var ctx=canvas.getContext('2d');
     var img = this.props.img;
-
-ctx.drawImage(img, 0, 0, img.width,    img.height,    
-    0, 0, canvas.width, canvas.height);
+//draw image to fit exactly the canvas 
+ctx.drawImage(img, 0, 0,  canvas.width, canvas.height);
     //ctx.fillStyle="rgba(255, 255, 255, 0)";
     ctx.fillStyle='rgba(255, 255, 255, 0)';
     ctx.fillRect(0,0,canvas.width,80);

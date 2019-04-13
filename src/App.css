@@ -47,7 +47,12 @@ position: relative;
 margin-bottom:30px;
 cursor: pointer;
 box-shadow: 2px 2px 3px black;
+transition: all .4s ;
 
+}
+.beSmaller{
+width:380px;
+height: 370px;
 }
 .smallBox img {
   width:100%;

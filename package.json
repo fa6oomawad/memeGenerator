@@ -2,7 +2,6 @@
   "name": "memegen",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fa6oomawad.github.io/memeGenerator/",
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
@@ -28,5 +27,7 @@
   ],
   "devDependencies": {
     "gh-pages": "^2.0.1"
-  }
+  },
+  "homepage": "https://fa6oomawad.github.io/memeGenerator"
+
 }

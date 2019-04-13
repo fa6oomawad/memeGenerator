@@ -50,6 +50,7 @@ writeTextOnTop(e){
     var img = this.props.img;
     
     
+    
     //every time change happen in text clear the written so it dosent get over each other and make blurry
     if(e.target.id==='upperText'){
     ctx.clearRect(0,0,canvas.width,80);
@@ -87,11 +88,11 @@ return this.props.history.push('/');
 
 downloadImge(){
 const canvas=document.querySelector('.tinyBox2');
-const data=canvas.toDataURL('image/jpeg');
+const data=canvas.toDataURL('image/png');
 const link=document.querySelector('#down');
 link.href=data;
 link.setAttribute('download','meme');
-link.innerHTML=`<img  src='${data}' alt='meme'/>`;
+link.innerHTML=`<img  src='${data}'  alt='meme'/>`;
 }
 
 

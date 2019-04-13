@@ -17,6 +17,8 @@ this.state={
 }
 this.handleImgClick=this.handleImgClick.bind(this);
 this.fetchingMemes=this.fetchingMemes.bind(this);
+this.handleMouseEnter=this.handleMouseEnter.bind(this);
+this.handleMouseOut=this.handleMouseOut.bind(this);
 }
 
 componentDidMount(){
@@ -47,6 +49,14 @@ this.setState({
   img:e.target,
 })
 }
+handleMouseEnter(e){
+const box= e.currentTarget;
+box.classList.add('beSmaller');
+}
+handleMouseOut(e){
+  const box= e.currentTarget;
+  box.classList.remove('beSmaller')
+}
 
   render() {
     return (
@@ -61,7 +71,7 @@ this.setState({
        {this.state.data.map((meme)=>{
          return ( 
          <Link to='/CreateMeme' key={meme.imageID}>
-         <div className="smallBox" onClick={this.handleImgClick} onMouseOver={this.handleMouseOver}>
+         <div className="smallBox" onClick={this.handleImgClick} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseOut}>
          <img  src={meme.imageUrl} alt='meme'/>
          </div>
          </Link> 

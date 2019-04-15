@@ -69,7 +69,7 @@ handleMouseOut(e){
        <div className="bigBox">
       
        {this.state.data
-       
+       .filter((meme)=>meme['box_count']===2)
        .map((meme)=>{
          return ( 
          <Link to='/CreateMeme' key={meme.id}>

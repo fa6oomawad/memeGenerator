@@ -26,10 +26,10 @@ componentDidMount(){
 }
 fetchingMemes(){
   
-  const encodedURI=encodeURI(`http://version1.api.memegenerator.net//Generators_Select_ByPopular?pageIndex=0&pageSize=12&apiKey=7ca1ef06-a4d3-46ca-8d9c-78533b6b5e78`)
+  const encodedURI=encodeURI(`https://api.imgflip.com/get_memes`)
   return fetch(encodedURI)
   .then((data)=>data.json())
-  .then((repos)=>this.setState({data:repos.result})
+  .then((repos)=>this.setState({data:repos.data.memes})
   
 )
 .catch((error)=>{
@@ -68,11 +68,13 @@ handleMouseOut(e){
      
        <div className="bigBox">
       
-       {this.state.data.map((meme)=>{
+       {this.state.data
+       
+       .map((meme)=>{
          return ( 
-         <Link to='/CreateMeme' key={meme.imageID}>
+         <Link to='/CreateMeme' key={meme.id}>
          <div className="smallBox" onClick={this.handleImgClick} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseOut}>
-         <img  src={meme.imageUrl} alt='meme'/>
+         <img crossOrigin= 'anonymous' src={meme.url} alt='meme'/>
          </div>
          </Link> 
          )

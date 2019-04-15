@@ -25,9 +25,10 @@
     "not ie <= 11",
     "not op_mini all"
   ],
+  "homepage": "http://fa6oomawad.github.io/memeGenerator",
+
   "devDependencies": {
     "gh-pages": "^2.0.1"
-  },
-  "homepage": "https://fa6oomawad.github.io/memeGenerator"
+  }
 
 }

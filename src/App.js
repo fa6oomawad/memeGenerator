@@ -81,7 +81,7 @@ handleMouseOut(e){
        })}
        </div>
 
-       <Route path='/' render={(props)=><App />} />
+       <Route path='/' render={App} />
 
       <Route path='/CreateMeme' render={(props)=><Meme {...props} img={this.state.img}/>} />
       </div>

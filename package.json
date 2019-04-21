@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://fa6oomawad.github.io/memeGenerator",
-
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "font-awesome": "^4.7.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-router-dom": "^4.4.0",
@@ -27,9 +30,7 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-
   "devDependencies": {
     "gh-pages": "^2.0.1"
   }
-
 }

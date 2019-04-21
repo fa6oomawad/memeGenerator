@@ -66,3 +66,28 @@ height: 370px;
   background-color: rgba(137, 43, 226, 0.274);
 }
 
+
+.githubCode i {
+  font-size: 30px;
+  color:black;
+  cursor: pointer;
+  display: inline;
+  position: absolute;
+  top:10%;
+  right:5%;
+  z-index:1000;
+}
+.githubCode i:hover {
+  color:blue;
+}
+
+.githubCode p {
+  display: none;
+  font-family: monospace;
+  position: absolute;
+  top:90%;
+  right:0%;
+  transition: all 2s ease-out;
+
+  
+}

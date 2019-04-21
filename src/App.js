@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import one from './one.jpg';
 import './App.css';
 import Meme from './Meme.js'
+import 'font-awesome/css/font-awesome.min.css';
+
 import {
   HashRouter,
   Route,
@@ -19,6 +20,7 @@ this.handleImgClick=this.handleImgClick.bind(this);
 this.fetchingMemes=this.fetchingMemes.bind(this);
 this.handleMouseEnter=this.handleMouseEnter.bind(this);
 this.handleMouseOut=this.handleMouseOut.bind(this);
+this.handleSource=this.handleSource.bind(this);
 }
 
 componentDidMount(){
@@ -57,6 +59,14 @@ handleMouseOut(e){
   const box= e.currentTarget;
   box.classList.remove('beSmaller')
 }
+handleSource(){
+  const githubP= document.querySelector('.githubCode p');
+  console.log(githubP)
+
+  
+  githubP.style.right='8%';
+  githubP.style.display='inline'
+}
 
   render() {
     return (
@@ -65,7 +75,14 @@ handleMouseOut(e){
       <div className='titleBox'>
       <h1 className="title">MEME <br/> GENERATOR</h1>
       </div>
-     
+      <div className='githubCode'>
+                <a href="https://github.com/fa6oomawad/Todo-list">
+                <i className="fab fa-github" onMouseOver={this.handleSource}>
+                </i></a>
+            <p>check the source code</p>
+
+
+         </div>
        <div className="bigBox">
       
        {this.state.data
@@ -79,6 +96,9 @@ handleMouseOut(e){
          </Link> 
          )
        })}
+
+       
+
        </div>
 
 
